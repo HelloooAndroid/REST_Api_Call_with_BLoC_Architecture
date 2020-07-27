@@ -1,16 +1,34 @@
-# interviewquestions
+# REST Api Call with BLoC Architecture
 
-A new Flutter application.
+Repository contains example of REST api call with BLoC architecture.
 
-## Getting Started
+## What is BLoC Architecture
 
-This project is a starting point for a Flutter application.
+BloC (Business Logic Component) is an architecture pattern introduced by Google at their IO conference this year. The idea behind it is to have separated components (BloC components) containing only the business logic that is meant to be easily shared between different Dart apps.
 
-A few resources to get you started if this is your first Flutter project:
+<b>The goal of this library is to make it easy to separate presentation from business logic, facilitating testability and reusability.</b>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Module Functionality
+
+1. Fetch response using Api
+2. If response is successful, show result in list. 
+3. Else show error with reload button
+
+## Components
+![](https://user-images.githubusercontent.com/53623174/88580424-348caf00-d069-11ea-9694-356a746f40e7.jpg)
+
+### View
+View contains UI of the module. It interact with controller for the state and data to manipulate UI on screen.
+
+### BLoC
+BLoc contains busines logic required to gather/manipulate data. 
+It has `StreamController` which creates <b>stream</b> and <b>sink</b> to interact with state of the widgets.
+
+### Repository
+It is responsible for making REST call and pass data to BLoc.
+
+### Data
+It is source of the data i.e. Server/DB etc.
+
+
